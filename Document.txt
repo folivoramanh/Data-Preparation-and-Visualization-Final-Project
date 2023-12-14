@@ -1,0 +1,42 @@
+This file is for documentary and credit idea
+- Base code and LightGBM hyperparameters: 
+    https://www.kaggle.com/code/hikmetsezen/base-model-with-0-804-auc-on-home-credit
+
+
+- EDA and FeatureEngineering source
+        1. https://github.com/yakupkaplan/Home-Credit-Default-Risk/tree/main
+
+        2. https://github.com/NoxMoon/home-credit-default-risk/tree/master
+
+        3. https://github.com/KazukiOnodera/Home-Credit-Default-Risk/tree/master 
+        <Top 2 leaderboad, thanks for idea of searching new encode method>
+
+        4. https://www.kaggle.com/code/phamdinhkhanh/home-credit-default-risk
+        <Easily to understand and very boost score with 3 sigma method>
+
+        5. https://github.com/DenisVorotyntsev/CategoricalEncodingBenchmark
+        <Benchmark for select new encoder>
+
+        6. https://www.quanthub.com/how-do-outliers-impact-correlation/
+        <many thanks for this, which led me decided to not drop any original columns>
+
+        7. https://www.kaggle.com/code/daikiariga/notebook9f172c45b2
+
+        8. https://www.kaggle.com/code/jsaguiar/lightgbm-7th-place-solution
+        <which affects my modified much as it has very different with my original base>
+
+        9. https://github.com/anshikaahuja/Home-Credit-Default-Risk/tree/master
+
+        and many other sources that i have not remember all.
+
+- For Blending idea:
+    + https://www.kaggle.com/code/hikmetsezen/blend-boosting-for-home-credit-default-risk
+
+Notation for all project:
+- Actually, for Feature Engineering path, there are many things to try but we were lack of time and number of submissions.
+- For Blending, I'm not sure that re-run all project with mentioned params can result same output. 
+Because in refactor process, I found out that I has some duplicate new feature, so that i drop it and re-run, it very close to the old one but not exactly
+
+Notation for Feature Engineering and Modeling:
+- Reason why I have not split the feature selection part and the tunning part 
+is because I want to see the situation in overall
