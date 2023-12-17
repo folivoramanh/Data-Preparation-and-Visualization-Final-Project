@@ -1,33 +1,42 @@
 '''This file contains constants used in the project.
 
 Constants:
-    BUREAU_AGG: Aggregate features to bureau.csv by SK_ID_CURR.
-    BUREAU_ACTIVE_AGG: Aggregate features to bureau.csv for active loans by SK_ID_CURR.
-    BUREAU_CLOSED_AGG: Aggregate features to bureau.csv for closed loans by SK_ID_CURR.
-    BUREAU_LOAN_TYPE_AGG: Aggregate features to bureau.csv by loan type (LoanType) and by SK_ID_CURR.
-    BUREAU_TIME_AGG: Aggregate features to bureau.csv by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
+    BUREAU_AGG: Aggregate features to dseb63_bureau.csv by SK_ID_CURR.
+    BUREAU_ACTIVE_AGG: Aggregate features to dseb63_bureau.csv for active loans by SK_ID_CURR.
+    BUREAU_CLOSED_AGG: Aggregate features to dseb63_bureau.csv for closed loans by SK_ID_CURR.
+    BUREAU_LOAN_TYPE_AGG: Aggregate features to dseb63_bureau.csv 
+                            by loan type (LoanType) and by SK_ID_CURR.
+    BUREAU_TIME_AGG: Aggregate features to dseb63_bureau.csv 
+                        by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
 
-    PREVIOUS_AGG: Aggregate features to previous_application.csv by SK_ID_CURR.
-    PREVIOUS_ACTIVE_AGG: Aggregate features to previous_application.csv for active loans by SK_ID_CURR.
-    PREVIOUS_APPROVED_AGG: Aggregate features to previous_application.csv for approved loans by SK_ID_CURR.
-    PREVIOUS_REFUSED_AGG: Aggregate features to previous_application.csv for refused loans by SK_ID_CURR.
-    PREVIOUS_LATE_PAYMENTS_AGG: Aggregate features to previous_application.csv for late payments by SK_ID_CURR.
-    PREVIOUS_LOAN_TYPE_AGG: Aggregate features to previous_application.csv by loan type (LoanType) and by SK_ID_CURR.
-    PREVIOUS_TIME_AGG: Aggregate features to previous_application.csv by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
+    PREVIOUS_AGG: Aggregate features to dseb63_previous_application.csv by SK_ID_CURR.
+    PREVIOUS_ACTIVE_AGG: Aggregate features to dseb63_previous_application.csv 
+                                                    for active loans by SK_ID_CURR.
+    PREVIOUS_APPROVED_AGG: Aggregate features to dseb63_previous_application.csv 
+                                                    for approved loans by SK_ID_CURR.
+    PREVIOUS_REFUSED_AGG: Aggregate features to dseb63_previous_application.csv 
+                                                    for refused loans by SK_ID_CURR.
+    PREVIOUS_LATE_PAYMENTS_AGG: Aggregate features to dseb63_previous_application.csv 
+                                                    for late payments by SK_ID_CURR.
+    PREVIOUS_LOAN_TYPE_AGG: Aggregate features to dseb63_previous_application.csv 
+                                                    by loan type (LoanType) and by SK_ID_CURR.
+    PREVIOUS_TIME_AGG: Aggregate features to dseb63_previous_application.csv
+                        by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
 
-    POS_CASH_AGG: Aggregate features to POS_CASH_balance.csv by SK_ID_CURR.
+    POS_CASH_AGG: Aggregate features to dseb63_POS_CASH_balance.csv by SK_ID_CURR.
 
-    INSTALLMENTS_AGG: Aggregate features to installments_payments.csv by SK_ID_CURR.
-    INSTALLMENTS_TIME_AGG: Aggregate features to installments_payments.csv by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
+    INSTALLMENTS_AGG: Aggregate features to dseb63_installments_payments.csv by SK_ID_CURR.
+    INSTALLMENTS_TIME_AGG: Aggregate features to dseb63_installments_payments.csv
+                        by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
 
-    CREDIT_CARD_AGG: Aggregate features to credit_card_balance.csv by SK_ID_CURR.
-    CREDIT_CARD_TIME_AGG: Aggregate features to credit_card_balance.csv by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
+    CREDIT_CARD_AGG: Aggregate features to dseb63_credit_card_balance.csv by SK_ID_CURR.
+    CREDIT_CARD_TIME_AGG: Aggregate features to dseb63_credit_card_balance.csv 
+                        by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.
     
-    rolling_columns: list of column to calculate the rolling Exponential Weighted Moving Average over months
+    rolling_columns: list of column to calculate the 
+                            rolling Exponential Weighted Moving Average over months
 '''
 
-
-''' Aggregate features to bureau.csv by SK_ID_CURR. '''
 BUREAU_AGG = {
     'SK_ID_BUREAU': ['nunique'],
 
@@ -80,7 +89,6 @@ BUREAU_AGG = {
     'STATUS_X': ['mean'],
 }
 
-''' Aggregate features to bureau.csv for active loans by SK_ID_CURR.'''
 BUREAU_ACTIVE_AGG = {
     'AMT_CREDIT_MAX_OVERDUE': ['max', 'mean'],
     'AMT_CREDIT_SUM': ['max', 'sum'],
@@ -100,7 +108,6 @@ BUREAU_ACTIVE_AGG = {
     'MONTHS_BALANCE_SIZE': ['mean', 'sum'],
 }
 
-''' Aggregate features to bureau.csv for closed loans by SK_ID_CURR.'''
 BUREAU_CLOSED_AGG = {
     'AMT_CREDIT_MAX_OVERDUE': ['max', 'mean'],
     'AMT_CREDIT_SUM_OVERDUE': ['mean'],
@@ -119,7 +126,6 @@ BUREAU_CLOSED_AGG = {
 
 }
 
-''' Aggregate features to bureau.csv by loan type (LoanType) and by SK_ID_CURR.'''
 BUREAU_LOAN_TYPE_AGG = {
     'AMT_CREDIT_MAX_OVERDUE': ['mean', 'max'],
     'AMT_CREDIT_SUM': ['mean', 'max'],
@@ -135,7 +141,6 @@ BUREAU_LOAN_TYPE_AGG = {
     'DEBT_CREDIT_OVERDUE_DIFF': ['mean']
 }
 
-''' Aggregate features to bureau.csv by number of months in balance (MONTHS_BALANCE_SIZE) and by SK_ID_CURR.'''
 BUREAU_TIME_AGG = {
     'AMT_CREDIT_MAX_OVERDUE': ['max', 'mean'],
     'AMT_CREDIT_SUM_OVERDUE': ['mean'],
@@ -156,84 +161,99 @@ PREVIOUS_AGG = {
 
     'AMT_ANNUITY': ['min', 'max', 'mean'],
     'AMT_DOWN_PAYMENT': ['max', 'mean'],
-
-    'HOUR_APPR_PROCESS_START': ['min', 'max', 'mean'],
-    'RATE_DOWN_PAYMENT': ['max', 'mean'],
-    'DAYS_DECISION': ['min', 'max', 'mean'],
-    'CNT_PAYMENT': ['max', 'mean'],
-    'DAYS_TERMINATION': ['max'],
-    # Engineered features
-    'CREDIT_TO_ANNUITY_RATIO': ['mean', 'max'],
     'APPLICATION_CREDIT_DIFF': ['min', 'max', 'mean'],
     'APPLICATION_CREDIT_RATIO': ['min', 'max', 'mean', 'var'],
+
+    'CNT_PAYMENT': ['max', 'mean'],
+    'CREDIT_TO_ANNUITY_RATIO': ['mean', 'max'],
+
+    'DAYS_TERMINATION': ['max'],
+    'DAYS_DECISION': ['min', 'max', 'mean'],
     'DOWN_PAYMENT_TO_CREDIT': ['mean'],
+
+    'HOUR_APPR_PROCESS_START': ['min', 'max', 'mean'],
+
     'NEW_CREDIT_GOODS_RATE': ['mean', 'max', 'var', 'min'],
     'NEW_END_DIFF': ['min', 'max'],
     'NEW_DAYS_DUE_DIFF': ['min', 'max'],
-    'NEW_RETURN_DAY': ['min', 'max']
+    'NEW_RETURN_DAY': ['min', 'max'],
+
+    'RATE_DOWN_PAYMENT': ['max', 'mean'],
 }
 
 PREVIOUS_ACTIVE_AGG = {
     'SK_ID_PREV': ['nunique'],
-    'SIMPLE_INTERESTS': ['mean'],
+
     'AMT_ANNUITY': ['max', 'sum'],
     'AMT_APPLICATION': ['max', 'mean'],
     'AMT_CREDIT': ['sum'],
     'AMT_DOWN_PAYMENT': ['max', 'mean'],
-    'DAYS_DECISION': ['min', 'mean'],
-    'CNT_PAYMENT': ['mean', 'sum'],
-    'DAYS_LAST_DUE_1ST_VERSION': ['min', 'max', 'mean'],
-    # Engineered features
     'AMT_PAYMENT': ['sum'],
+
+    'CNT_PAYMENT': ['mean', 'sum'],
+
+    'DAYS_DECISION': ['min', 'mean'],
+    'DAYS_LAST_DUE_1ST_VERSION': ['min', 'max', 'mean'],
+
     'INSTALMENT_PAYMENT_DIFF': ['mean', 'max'],
+
     'REMAINING_DEBT': ['max', 'mean', 'sum'],
     'REPAYMENT_RATIO': ['mean'],
+
+    'SIMPLE_INTERESTS': ['mean'],
 }
 
 PREVIOUS_APPROVED_AGG = {
     'SK_ID_PREV': ['nunique'],
+
     'AMT_ANNUITY': ['min', 'max', 'mean'],
     'AMT_CREDIT': ['min', 'max', 'mean'],
     'AMT_DOWN_PAYMENT': ['max'],
     'AMT_GOODS_PRICE': ['max'],
-    'HOUR_APPR_PROCESS_START': ['min', 'max'],
-    'DAYS_DECISION': ['min', 'mean'],
-    'CNT_PAYMENT': ['max', 'mean'],
-    'DAYS_TERMINATION': ['mean'],
-    # Engineered features
-    'CREDIT_TO_ANNUITY_RATIO': ['mean', 'max'],
+    'AMT_INTEREST': ['min', 'max', 'mean'],
     'APPLICATION_CREDIT_DIFF': ['max'],
     'APPLICATION_CREDIT_RATIO': ['min', 'max', 'mean'],
-    # The following features are only for approved applications
+
+    'CNT_PAYMENT': ['max', 'mean'],
+    'CREDIT_TO_ANNUITY_RATIO': ['mean', 'max'],
+
+    'DAYS_DECISION': ['min', 'mean'],
+    'DAYS_TERMINATION': ['mean'],
     'DAYS_FIRST_DRAWING': ['max', 'mean'],
     'DAYS_FIRST_DUE': ['min', 'mean'],
     'DAYS_LAST_DUE_1ST_VERSION': ['min', 'max', 'mean'],
     'DAYS_LAST_DUE': ['max', 'mean'],
     'DAYS_LAST_DUE_DIFF': ['min', 'max', 'mean'],
-    'SIMPLE_INTERESTS': ['min', 'max', 'mean'],
-    'AMT_INTEREST': ['min', 'max', 'mean'],
+
+    'HOUR_APPR_PROCESS_START': ['min', 'max'],
+
     'INTEREST_SHARE': ['min', 'max', 'mean'],
-    'INTEREST_RATE': ['min', 'max', 'mean']
+    'INTEREST_RATE': ['min', 'max', 'mean'],
+
+    'SIMPLE_INTERESTS': ['min', 'max', 'mean'],
 }
 
 PREVIOUS_REFUSED_AGG = {
     'AMT_APPLICATION': ['max', 'mean'],
     'AMT_CREDIT': ['min', 'max'],
-    'DAYS_DECISION': ['min', 'max', 'mean'],
-    'CNT_PAYMENT': ['max', 'mean'],
-    # Engineered features
     'APPLICATION_CREDIT_DIFF': ['min', 'max', 'mean', 'var'],
     'APPLICATION_CREDIT_RATIO': ['min', 'mean'],
+
+    'CNT_PAYMENT': ['max', 'mean'],
+
+    'DAYS_DECISION': ['min', 'max', 'mean'],
+
     'NAME_CONTRACT_TYPE_Consumer loans': ['mean'],
     'NAME_CONTRACT_TYPE_Cash loans': ['mean'],
     'NAME_CONTRACT_TYPE_Revolving loans': ['mean'],
 }
 
 PREVIOUS_LATE_PAYMENTS_AGG = {
+    'APPLICATION_CREDIT_DIFF': ['min'],
+
     'DAYS_DECISION': ['min', 'max', 'mean'],
     'DAYS_LAST_DUE_1ST_VERSION': ['min', 'max', 'mean'],
-    # Engineered features
-    'APPLICATION_CREDIT_DIFF': ['min'],
+
     'NAME_CONTRACT_TYPE_Consumer loans': ['mean'],
     'NAME_CONTRACT_TYPE_Cash loans': ['mean'],
     'NAME_CONTRACT_TYPE_Revolving loans': ['mean'],
@@ -242,76 +262,95 @@ PREVIOUS_LATE_PAYMENTS_AGG = {
 PREVIOUS_LOAN_TYPE_AGG = {
     'AMT_CREDIT': ['sum'],
     'AMT_ANNUITY': ['mean', 'max'],
-    'SIMPLE_INTERESTS': ['min', 'mean', 'max', 'var'],
     'APPLICATION_CREDIT_DIFF': ['min', 'var'],
     'APPLICATION_CREDIT_RATIO': ['min', 'max', 'mean'],
+
     'DAYS_DECISION': ['max'],
     'DAYS_LAST_DUE_1ST_VERSION': ['max', 'mean'],
+
+    'SIMPLE_INTERESTS': ['min', 'mean', 'max', 'var'],
 }
 PREVIOUS_TIME_AGG = {
     'AMT_CREDIT': ['sum'],
     'AMT_ANNUITY': ['mean', 'max'],
-    'SIMPLE_INTERESTS': ['mean', 'max'],
-    'DAYS_DECISION': ['min', 'mean'],
-    'DAYS_LAST_DUE_1ST_VERSION': ['min', 'max', 'mean'],
-    # Engineered features
     'APPLICATION_CREDIT_DIFF': ['min'],
     'APPLICATION_CREDIT_RATIO': ['min', 'max', 'mean'],
+
+    'DAYS_DECISION': ['min', 'mean'],
+    'DAYS_LAST_DUE_1ST_VERSION': ['min', 'max', 'mean'],
+
     'NAME_CONTRACT_TYPE_Consumer loans': ['mean'],
     'NAME_CONTRACT_TYPE_Cash loans': ['mean'],
     'NAME_CONTRACT_TYPE_Revolving loans': ['mean'],
+
+    'SIMPLE_INTERESTS': ['mean', 'max'],
 }
 
 POS_CASH_AGG = {
     'SK_ID_PREV': ['nunique'],
-    'MONTHS_BALANCE': ['min', 'max', 'size'],
-    'SK_DPD': ['max', 'mean', 'sum', 'var', 'min'],
-    'SK_DPD_DEF': ['max', 'mean', 'sum'],
-    'LATE_PAYMENT': ['mean'],
     'SK_ID_CURR': ['count'],
+
     'EXP_CNT_INSTALMENT': ['last', 'min', 'max', 'mean', 'sum'],
     'EXP_CNT_INSTALMENT_FUTURE': ['last', 'min', 'max', 'mean', 'sum'],
+
+    'LATE_PAYMENT': ['mean'],
+
+    'MONTHS_BALANCE': ['min', 'max', 'size'],
+
     'POS_IS_DPD': ['mean', 'sum'],
     'POS_IS_DPD_UNDER_120': ['mean', 'sum'],
     'POS_IS_DPD_OVER_120': ['mean', 'sum'],
+
+    'SK_DPD': ['max', 'mean', 'sum', 'var', 'min'],
+    'SK_DPD_DEF': ['max', 'mean', 'sum'],
 }
 INSTALLMENTS_AGG = {
     'SK_ID_PREV': ['size', 'nunique'],
-    'DAYS_ENTRY_PAYMENT': ['min', 'max', 'mean'],
+
     'AMT_INSTALMENT': ['min', 'max', 'mean', 'sum'],
     'AMT_PAYMENT': ['min', 'max', 'mean', 'sum'],
+
+    'DAYS_ENTRY_PAYMENT': ['min', 'max', 'mean'],
     'DPD': ['max', 'mean', 'var'],
     'DBD': ['max', 'mean', 'var'],
-    'PAYMENT_DIFFERENCE': ['mean'],
-    'PAYMENT_RATIO': ['mean'],
-    'LATE_PAYMENT': ['mean', 'sum'],
-    'SIGNIFICANT_LATE_PAYMENT': ['mean', 'sum'],
-    'LATE_PAYMENT_RATIO': ['mean'],
     'DPD_7': ['mean'],
     'DPD_15': ['mean'],
-    'PAID_OVER': ['mean'],
-    # ----------BỔ SUNG----------------------
+
     'INS_IS_DPD_UNDER_120': ['mean', 'sum'],
-    'INS_IS_DPD_OVER_120': ['mean', 'sum']
+    'INS_IS_DPD_OVER_120': ['mean', 'sum'],
+
+    'LATE_PAYMENT': ['mean', 'sum'],
+    'LATE_PAYMENT_RATIO': ['mean'],
+
+    'PAID_OVER': ['mean'],
+    'PAYMENT_DIFFERENCE': ['mean'],
+    'PAYMENT_RATIO': ['mean'],
+
+    'SIGNIFICANT_LATE_PAYMENT': ['mean', 'sum'],
 }
 
 INSTALLMENTS_TIME_AGG = {
     'SK_ID_PREV': ['size'],
-    'DAYS_ENTRY_PAYMENT': ['min', 'max', 'mean'],
+
     'AMT_INSTALMENT': ['min', 'max', 'mean', 'sum'],
     'AMT_PAYMENT': ['min', 'max', 'mean', 'sum'],
+
+    'DAYS_ENTRY_PAYMENT': ['min', 'max', 'mean'],
     'DPD': ['max', 'mean', 'var'],
     'DBD': ['max', 'mean', 'var'],
-    'PAYMENT_DIFFERENCE': ['mean'],
-    'PAYMENT_RATIO': ['mean'],
-    'LATE_PAYMENT': ['mean'],
-    'SIGNIFICANT_LATE_PAYMENT': ['mean'],
-    'LATE_PAYMENT_RATIO': ['mean'],
     'DPD_7': ['mean'],
     'DPD_15': ['mean'],
+
+    'LATE_PAYMENT': ['mean'],
+    'LATE_PAYMENT_RATIO': ['mean'],
+
+    'PAYMENT_DIFFERENCE': ['mean'],
+    'PAYMENT_RATIO': ['mean'],
+
+    'SIGNIFICANT_LATE_PAYMENT': ['mean'],
 }
 
-''' Aggregate features to credit_card_balance.csv by SK_ID_CURR.'''
+
 CREDIT_CARD_AGG = {
     'AMT_BALANCE': ['sum', 'min', 'max'],
     'AMT_CREDIT_LIMIT_ACTUAL': ['max', 'sum', 'min'],
@@ -361,7 +400,6 @@ CREDIT_CARD_AGG = {
     'PAYMENT_MIN_TOTAL_DIFF': ['min', 'mean'],
 }
 
-''' Aggregate features to credit_card_balance.csv by SK_ID_CURR and by number of months in balance (MONTHS_BALANCE).'''
 CREDIT_CARD_TIME_AGG = {
     'AMT_BALANCE': ['mean', 'max'],
 
@@ -381,7 +419,6 @@ CREDIT_CARD_TIME_AGG = {
     'SK_DPD': ['max', 'sum'],
 }
 
-''' list of column to calculate the rolling Exponential Weighted Moving Average over months'''
 rolling_columns = [
     'AMT_BALANCE',
     'AMT_CREDIT_LIMIT_ACTUAL',

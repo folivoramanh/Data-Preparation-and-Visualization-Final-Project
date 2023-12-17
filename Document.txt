@@ -35,8 +35,11 @@ This file is for documentary and credit idea
 Notation for all project:
 - Actually, for Feature Engineering path, there are many things to try but we were lack of time and number of submissions.
 - For Blending, I'm not sure that re-run all project with mentioned params can result same output. 
-Because in refactor process, I found out that I has some duplicate new feature, so that i drop it and re-run, it very close to the old one but not exactly
+Because in refactor process, I found out that I has some duplicate new feature, 
+so that i drop it and re-run, it very close to the old one but not exactly
 
 Notation for Feature Engineering and Modeling:
 - Reason why I have not split the feature selection part and the tunning part 
 is because I want to see the situation in overall
+- WoeEncoder: Reason why I only easily implement it is because I have time to try it 
+only on the last week of the contest, and it's hard for me to refactor all codes to implement it in all tables.

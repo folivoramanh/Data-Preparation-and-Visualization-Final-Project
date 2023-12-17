@@ -19,7 +19,7 @@ def feature_selection(train_data, target=None, method='Kbest', k=0.867):
             Default: 'Kbest'
     k: int
         The number of features to select
-        Default: 0.867 - 86,7% of features are selected - base on best result from kaggle contest'''
+        Default: 0.867 - 86,7% of features are selected - base on best of my result from kaggle contest'''
     if method not in ['lgbm', 'Kbest']:
         raise ValueError('Method not supported')
     elif method == 'Kbest' and k is None:

@@ -123,8 +123,8 @@ def previous_application(path_to_data):
 
     # Aggregations for Consumer loans and Cash loans
     for loan_type in ['Consumer loans', 'Cash loans']:
-        type_df = prev[prev['NAME_CONTRACT_TYPE_{}'.format(loan_type)] == 1]
-        prefix = 'PREV_' + loan_type.split(" ")[0] + '_'
+        type_df = prev[prev[f'NAME_CONTRACT_TYPE_{loan_type}'] == 1]
+        prefix = 'PREV_' + loan_type.split(" ", maxsplit=1)[0] + '_'
         agg_prev = group_and_merge(
             type_df, agg_prev, prefix, PREVIOUS_LOAN_TYPE_AGG)
     del type_df
@@ -143,7 +143,7 @@ def previous_application(path_to_data):
     # Aggregations for loans in the last x months
     for time_frame in [12, 24]:
         time_frame_df = prev[prev['DAYS_DECISION'] >= -30*time_frame]
-        prefix = 'PREV_LAST{}M_'.format(time_frame)
+        prefix = f'PREV_LAST{time_frame}M_'
         agg_prev = group_and_merge(
             time_frame_df, agg_prev, prefix, PREVIOUS_TIME_AGG)
         del time_frame_df

@@ -56,7 +56,7 @@ def installment(path_to_data):
         recent_prev_id = pay[pay['DAYS_INSTALMENT']
                              >= -30*months]['SK_ID_PREV'].unique()
         pay_recent = pay[pay['SK_ID_PREV'].isin(recent_prev_id)]
-        prefix = 'INS_{}M_'.format(months)
+        prefix = f'INS_{months}M_'
         pay_agg = group_and_merge(
             pay_recent, pay_agg, prefix, INSTALLMENTS_TIME_AGG)
 

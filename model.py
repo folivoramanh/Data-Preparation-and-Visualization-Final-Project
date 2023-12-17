@@ -147,11 +147,10 @@ def logistic_regression(df, num_folds, feat_select="Kbest", tunning=None, best_p
             'penalty': study.best_params['penalty'],
             'fit_intercept': study.best_params['fit_intercept'],
             'random_state': study.best_params['random_state'],
-            'class_weight': {0: study.best_params['class_weight_0'], 1: study.best_params['class_weight_1']},
+            'class_weight': {0: study.best_params['class_weight_0'],
+                             1: study.best_params['class_weight_1']},
             'warm_start': True
         }
-    else:
-        best_params = best_params
 
     # Train the model with the best hyperparameters on the full training set
     final_model = LogisticRegression(**best_params)

@@ -80,17 +80,15 @@ def application(path_to_data):
 
     # EXT_SOURCE_X FEATURE (External source)
     for function_name in ['min', 'max', 'mean', 'nanmedian']:
-        feature_name = 'EXT_SOURCES_{}'.format(function_name.upper())
+        feature_name = f'EXT_SOURCES_{function_name.upper()}'
         df[feature_name] = eval('np.{}'.format(function_name))(
             df[['EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3']], axis=1)
-    # df['APPS_EXT_SOURCE_MEAN'] = df[['EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3']].mean(axis=1)
+
     df['APPS_EXT_SOURCE_STD'] = df[['EXT_SOURCE_1',
                                     'EXT_SOURCE_2', 'EXT_SOURCE_3']].std(axis=1)
     df['APPS_EXT_SOURCE_STD'] = df['APPS_EXT_SOURCE_STD'].fillna(
         df['APPS_EXT_SOURCE_STD'].mean())
-    # df['APP_SCORE1_TO_BIRTH_RATIO'] = df['EXT_SOURCE_1'] / (df['DAYS_BIRTH'] / 365.25)
-    # df['APP_SCORE2_TO_BIRTH_RATIO'] = df['EXT_SOURCE_2'] / (df['DAYS_BIRTH'] / 365.25)
-    # df['APP_SCORE3_TO_BIRTH_RATIO'] = df['EXT_SOURCE_3'] / (df['DAYS_BIRTH'] / 365.25)
+
     df['APP_SCORE1_TO_EMPLOY_RATIO'] = df['EXT_SOURCE_1'] / \
         (df['DAYS_EMPLOYED'] / 365.25)
     df['EXT_SOURCES_PROD'] = df['EXT_SOURCE_1'] * \
