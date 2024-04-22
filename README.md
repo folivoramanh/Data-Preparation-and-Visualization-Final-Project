@@ -13,27 +13,6 @@ This repository contains code for a machine learning project focused on predicti
 - **Main**: Model Fitting and Evaluation
   - Train machine learning models using the preprocessed data and evaluate their performance.
 
-## Assigned work
-
-  * Trinh Mai Anh
-    - EDA<br /> 
-      * Review and fix comments for all EDA files
-      * Refactor Code 
-    - Feature Engineer <br />
-    - Tunning model <br />
-  * Nguyen Phuong Linh
-    - EDA<br />
-      * Bureau
-      * Bureau_balance
-    - Slide <br />
-  * Nguyen Thuy Linh
-    - EDA<br />
-      * Application_train 
-      * Instalment_payment
-      * Credit_card_balance 
-      * POS_CASH_balance
-      * Previous_application
-
 ## System Architecture
 
 ```bash
@@ -177,3 +156,24 @@ cd Data-Preparation-and-Visualization-Final-Project
     - Replace your results path to file
     - Modify the coefficient of each features
     - Run it
+ 
+## Assigned work
+
+  * Trinh Mai Anh
+    - EDA<br /> 
+      * Review and fix comments for all EDA files
+      * Refactor Code 
+    - Feature Engineer <br />
+    - Tunning model <br />
+  * Nguyen Phuong Linh
+    - EDA<br />
+      * Bureau
+      * Bureau_balance
+    - Slide <br />
+  * Nguyen Thuy Linh
+    - EDA<br />
+      * Application_train 
+      * Instalment_payment
+      * Credit_card_balance 
+      * POS_CASH_balance
+      * Previous_application
